@@ -6,7 +6,7 @@
 #    By: ahallain <ahallain@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/09 19:30:41 by ahallain          #+#    #+#              #
-#    Updated: 2019/11/12 18:22:57 by ahallain         ###   ########.fr        #
+#    Updated: 2019/11/12 19:27:52 by ahallain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,13 +16,13 @@ check_file()
 {
 	printf "${COLOR_FUNC}BUFF_$1"
 	printf "$> gcc -Wall -Werror -Wextra tests/main.c ${PATH_TEST}/get_next_line.c ${PATH_TEST}/get_next_line_utils.c -D BUFFER_SIZE=$1 -o BUFF_$1\n">>${PATH_DEEPTHOUGHT}/deepthought
-	COMPIL_VAR=$(gcc -Wall -Werror -Wextra tests/main.c ${PATH_TEST}/get_next_line.c ${PATH_TEST}/get_next_line_utils.c -D BUFFER_SIZE=$1 -o BUFF_$1 2>&1)
+	COMPIL_VAR=$(gcc -Wall -Werror -Wextra tests/main.c ${PATH_TEST}/get_next_line.c ${PATH_TEST}/get_next_line_utils.c -D BUFFER_SIZE=$1 -o BUFF_$1 >>${PATH_DEEPTHOUGHT}/deepthought)
 	printf "\033[20G"
 	if [[ $COMPIL_VAR =~ "error" ]]
 		then
 			printf "${COLOR_FAIL}missing"
 			printf "\033[80GCompil. Failed${DEFAULT}"
-			printf "Compil. Failed\n">>${PATH_DEEPTHOUGHT}/deepthought
+			printf "Compil. Failed\n">>${PATH_DEEPTHOUGHT}/PATH_DEEPTHOUGHT
 		else
 			printf "${COLOR_OK}ok${DEFAULT}"
 			printf "\033[40G"
