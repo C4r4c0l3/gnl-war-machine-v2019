@@ -5,7 +5,7 @@
 ###################################
 
 #Edit the next line with the path of your libft project.
-PATH_GNL=/tmp/mmaj
+PATH_GNL="../../get_next_line"
 
 #If you use a relative path, don't put double quotes.
 #For example :

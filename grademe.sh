@@ -6,7 +6,7 @@
 #    By: ahallain <ahallain@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/09 17:03:20 by ahallain          #+#    #+#              #
-#    Updated: 2019/11/12 15:59:03 by ahallain         ###   ########.fr        #
+#    Updated: 2019/11/12 21:24:51 by ahallain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,15 +21,27 @@ source ${PATH_TEST}/my_config.sh
 
 cd ${PATH_TEST}
 
-printf "">${PATH_DEEPTHOUGHT}/deepthought
+clear
 
+printf "= Host-specific information ====================================================\n">${PATH_DEEPTHOUGHT}/deepthought
+printf "$> hostname; uname -msr\n">>${PATH_DEEPTHOUGHT}/deepthought
+hostname >>${PATH_DEEPTHOUGHT}/deepthought 2>&1
+printf "$(uname -msr)\n" >>${PATH_DEEPTHOUGHT}/deepthought
+printf "$> date\n">>${PATH_DEEPTHOUGHT}/deepthought
+printf "$(date)\n" >>${PATH_DEEPTHOUGHT}/deepthought
+printf "$> gcc --version\n">>${PATH_DEEPTHOUGHT}/deepthought
+printf "$(gcc --version 2>&1)\n" >>${PATH_DEEPTHOUGHT}/deepthought
+printf "$> clang --version\n">>${PATH_DEEPTHOUGHT}/deepthought
+printf "$(clang --version)\n\n" >>${PATH_DEEPTHOUGHT}/deepthought
 
 for file in "${FILES[@]}"
 do
-	cp ${PATH_GNL}/$file ${PATH_TEST}/$file
+	printf "$> cp ${PATH_GNL}/$file ${PATH_TEST}/$file\n" >>${PATH_DEEPTHOUGHT}/deepthought
+	cp ${PATH_GNL}/$file ${PATH_TEST}/$file >>${PATH_DEEPTHOUGHT}/deepthought 2>&1
 done
 
-clear
+echo "" >>${PATH_DEEPTHOUGHT}/deepthought
+
 if [ $NORM -eq 1 ]
 then
 	for file in "${FILES[@]}"

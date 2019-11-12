@@ -6,7 +6,7 @@
 #    By: ahallain <ahallain@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/09 19:30:41 by ahallain          #+#    #+#              #
-#    Updated: 2019/11/12 19:31:38 by ahallain         ###   ########.fr        #
+#    Updated: 2019/11/12 20:51:12 by ahallain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,6 @@ check_file()
 		else
 			printf "${COLOR_OK}ok${DEFAULT}"
 			printf "\033[40G"
-			printf "$> ./BUFF_$1 tests/file.txt 0\n">>${PATH_DEEPTHOUGHT}/deepthought
 			retval=1
 			for file in "${CHECK_FILES[@]}"
 			do
@@ -65,6 +64,7 @@ check_file()
 
 diff_check ()
 {
+	printf "$> ./BUFF_$1 tests/$2 0\n">>${PATH_DEEPTHOUGHT}/deepthought
 	RESULT_VAR=$(${PATH_TEST}/BUFF_$1 ${PATH_TEST}/tests/$2 0 >${PATH_TEST}/tests/user_output_buff_$1_$2 2>&1)
 	DEFAULT_OUTPUT=${PATH_TEST}/tests/default_$2.output
 	if (( $1 <= 0 ))
