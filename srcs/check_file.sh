@@ -6,7 +6,7 @@
 #    By: ahallain <ahallain@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/09 19:30:41 by ahallain          #+#    #+#              #
-#    Updated: 2019/11/12 16:26:13 by ahallain         ###   ########.fr        #
+#    Updated: 2019/11/12 18:22:57 by ahallain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,7 @@ check_file()
 
 diff_check ()
 {
-	RESULT_VAR=$(${PATH_TEST}/BUFF_$1 ${PATH_TEST}/tests/$2 0 >${PATH_TEST}/tests/user_output_buff_$1_$2)
+	RESULT_VAR=$(${PATH_TEST}/BUFF_$1 ${PATH_TEST}/tests/$2 0 >${PATH_TEST}/tests/user_output_buff_$1_$2 2>&1)
 	DEFAULT_OUTPUT=${PATH_TEST}/tests/default_$2.output
 	if (( $1 <= 0 ))
 	then

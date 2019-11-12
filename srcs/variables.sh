@@ -6,7 +6,7 @@
 #    By: ahallain <ahallain@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/09 18:12:48 by ahallain          #+#    #+#              #
-#    Updated: 2019/11/12 16:00:59 by ahallain         ###   ########.fr        #
+#    Updated: 2019/11/12 18:20:19 by ahallain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,4 +37,5 @@ CHECK_FILES=(
 	n.txt
 	void.txt
 	one_line.txt
+	bible.txt
 )
