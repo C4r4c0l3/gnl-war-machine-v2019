@@ -6,7 +6,7 @@
 #    By: ahallain <ahallain@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/09 19:30:41 by ahallain          #+#    #+#              #
-#    Updated: 2019/11/12 15:32:53 by ahallain         ###   ########.fr        #
+#    Updated: 2019/11/12 16:26:13 by ahallain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,9 +28,10 @@ check_file()
 			printf "\033[40G"
 			printf "$> ./BUFF_$1 tests/file.txt 0\n">>${PATH_DEEPTHOUGHT}/deepthought
 			retval=1
-			diff_check $1 file.txt
-			diff_check $1 n.txt
-			diff_check $1 void.txt
+			for file in "${CHECK_FILES[@]}"
+			do
+				diff_check $1 $file
+			done
 			printf "\033[60G"
 			if [ $LEAKS -eq 1 ]
 			then
@@ -68,9 +69,16 @@ diff_check ()
 	if (( $1 <= 0 ))
 	then
 		DEFAULT_OUTPUT=${PATH_TEST}/tests/buff_$1.output
+	else
+		if [ ! -f "$DEFAULT_OUTPUT" ]
+		then
+			printf "$> cp ${PATH_TEST}/tests/$2 $DEFAULT_OUTPUT\n" >> ${PATH_DEEPTHOUGHT}/deepthought
+			cp ${PATH_TEST}/tests/$2 $DEFAULT_OUTPUT
+			echo "" >> $DEFAULT_OUTPUT
+		fi
 	fi
 	printf "$> diff -U 3 ${PATH_TEST}/tests/user_output_buff_$1_$2 $DEFAULT_OUTPUT\n" >> ${PATH_DEEPTHOUGHT}/deepthought
-	DIFF=$(diff -U 3 ${PATH_TEST}/tests/user_output_buff_$1_$2 $DEFAULT_OUTPUT)
+	DIFF=$(diff -U 3 ${PATH_TEST}/tests/user_output_buff_$1_$2 $DEFAULT_OUTPUT 2>&1)
 	if [ "$DIFF" != "" ]
 	then
 		echo "${DIFF}" | cat -e >> ${PATH_DEEPTHOUGHT}/deepthought

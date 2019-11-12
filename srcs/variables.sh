@@ -6,7 +6,7 @@
 #    By: ahallain <ahallain@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/09 18:12:48 by ahallain          #+#    #+#              #
-#    Updated: 2019/11/12 15:12:37 by ahallain         ###   ########.fr        #
+#    Updated: 2019/11/12 16:00:59 by ahallain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,4 +30,11 @@ FILES=(
 	get_next_line.c
 	get_next_line.h
 	get_next_line_utils.c
+)
+
+CHECK_FILES=(
+	file.txt
+	n.txt
+	void.txt
+	one_line.txt
 )
