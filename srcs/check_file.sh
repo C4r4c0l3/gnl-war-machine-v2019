@@ -6,7 +6,7 @@
 #    By: ahallain <ahallain@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/09 19:30:41 by ahallain          #+#    #+#              #
-#    Updated: 2019/11/12 20:51:12 by ahallain         ###   ########.fr        #
+#    Updated: 2019/11/13 18:41:47 by ahallain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,8 +35,8 @@ check_file()
 			printf "\033[60G"
 			if [ $LEAKS -eq 1 ]
 			then
-				LEAKS_CHECK=$(./BUFF_$1 tests/file.txt 1.5 | leaks BUFF_$1 2>&1)
-				printf "$> ./BUFF_$1 tests/file.txt 1.5 | leaks BUFF_$1\n" >> ${PATH_DEEPTHOUGHT}/deepthought
+				printf "$> ./BUFF_$1 ${PATH_TEST}/tests/${CHECK_FILES[0]} 1\n" >> ${PATH_DEEPTHOUGHT}/deepthought
+				LEAKS_CHECK=$(./BUFF_$1 ${PATH_TEST}/tests/${CHECK_FILES[0]} 1 2>&1)
 				if [[ $LEAKS_CHECK =~ "0 leaks" ]]
 				then
 					printf "\nLEAKS OK :D\n" >> ${PATH_DEEPTHOUGHT}/deepthought
