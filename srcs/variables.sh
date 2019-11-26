@@ -6,7 +6,7 @@
 #    By: ahallain <ahallain@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/09 18:12:48 by ahallain          #+#    #+#              #
-#    Updated: 2019/11/13 18:21:01 by ahallain         ###   ########.fr        #
+#    Updated: 2019/11/26 18:02:22 by ahallain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,5 +36,22 @@ CHECK_FILES=(
 	line.txt
 	n.txt
 	void.txt
-	bible.txt
+	Mr._Justice_Maxell_by_Edgar_Wallace.txt
+	63_line
+	lorem_ipsum
+	63_line_nl
+	baudelaire.txt
+	many_lines
+	64_line
+	empty
+	multi_in_one
+	64_line_nl
+	empty_one
+	one_big_fat_line.txt
+	65_line
+	expected_result
+	over_buffer
+	65_line_nl
+	large_file.txt
+	simple
 )

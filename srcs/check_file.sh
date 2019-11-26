@@ -6,7 +6,7 @@
 #    By: ahallain <ahallain@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/09 19:30:41 by ahallain          #+#    #+#              #
-#    Updated: 2019/11/13 18:41:47 by ahallain         ###   ########.fr        #
+#    Updated: 2019/11/26 18:31:16 by ahallain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,7 @@ diff_check ()
 		then
 			printf "$> cp ${PATH_TEST}/tests/$2 $DEFAULT_OUTPUT\n" >> ${PATH_DEEPTHOUGHT}/deepthought
 			cp ${PATH_TEST}/tests/$2 $DEFAULT_OUTPUT
-			echo "" >> $DEFAULT_OUTPUT
+			printf "\n\n" >> $DEFAULT_OUTPUT
 		fi
 	fi
 	printf "$> diff -U 3 ${PATH_TEST}/tests/user_output_buff_$1_$2 $DEFAULT_OUTPUT\n" >> ${PATH_DEEPTHOUGHT}/deepthought

@@ -6,7 +6,7 @@
 /*   By: ahallain <ahallain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/09 19:32:06 by ahallain          #+#    #+#             */
-/*   Updated: 2019/11/13 19:29:07 by ahallain         ###   ########.fr       */
+/*   Updated: 2019/11/26 18:33:09 by ahallain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,10 @@ void	readfile(char *file, int print) {
 			printf("%s\n", line);
 		free(line);
 	}
+	get_next_line(fd, &line);
+	if (print)
+		printf("%s\n", line);
+	free(line);
 	close(fd);
 }
 
