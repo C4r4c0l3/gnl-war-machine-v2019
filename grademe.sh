@@ -6,7 +6,7 @@
 #    By: ahallain <ahallain@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/09 17:03:20 by ahallain          #+#    #+#              #
-#    Updated: 2019/11/12 21:24:51 by ahallain         ###   ########.fr        #
+#    Updated: 2020/01/20 11:21:39 by ahallain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,7 @@ printf "If you have an error on the BUFFER_SIZE of -1 and 0 it's normal\n\n"
 printf "${COLOR_TITLE}${UNDERLINE}\033[0GBUFFER_SIZE"
 printf "\033[20GCOMPIL."
 printf "\033[40GDIFF"
-printf "\033[60GLEAKS"
+printf "\033[70GLEAKS"
 printf "\033[80GRESULT\n${DEFAULT}"
 
 if ls ${PATH_TEST}/tests/user_output_buff_* 1> /dev/null 2>&1

@@ -6,7 +6,7 @@
 #    By: ahallain <ahallain@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/09 19:30:41 by ahallain          #+#    #+#              #
-#    Updated: 2019/11/26 18:31:16 by ahallain         ###   ########.fr        #
+#    Updated: 2020/01/20 11:21:56 by ahallain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ check_file()
 			do
 				diff_check $1 $file
 			done
-			printf "\033[60G"
+			printf "\033[70G"
 			if [ $LEAKS -eq 1 ]
 			then
 				printf "$> ./BUFF_$1 ${PATH_TEST}/tests/${CHECK_FILES[0]} 1\n" >> ${PATH_DEEPTHOUGHT}/deepthought
